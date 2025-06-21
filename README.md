@@ -10,4 +10,3 @@ Conducted security testing on a simulated web application. Identified a SQL inje
 ## Deliverables
 - Web_Pentest_Report.pdf – Full documented report
 - SQLi_PoC.txt – Proof of concept payload and Burp evidence
-- Burp_Suite_Findings.txt – Notes from Burp Suite test
