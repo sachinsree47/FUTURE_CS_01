@@ -1,31 +1,32 @@
 # SQL Injection Proof of Concept
 
-Target: PortSwigger SQLi Authentication Bypass Lab  
-URL: https://portswigger.net/web-security/sql-injection/lab-login-bypass  
-Analyst: Senoi  
-Date: 21-June-2025
+Target Lab: PortSwigger Academy – SQL Injection Login Bypass  
+Lab URL: https://0a8000dd046b824783bbd7c500c1009a.web-security-academy.net/login  
+Analyst: Sachin Madhumitha Sree D
+Date: 22-June-2025
 
 ---
 
 Payload Used:
 administrator'--
 
----
+CSRF Token Used:
+qF2XwNQurh3ASvMMsHl2FJ3WK3IiQ5MW
 
-Steps:
-1. Intercepted the POST /login request using Burp Suite.
-2. Modified the username parameter:
-   username=administrator'--
-3. Forwarded the request.
-4. Application responded with 302 Redirect.
-5. Logged in as administrator without valid credentials.
+Steps Taken:
+1. Accessed the lab's vulnerable login form.
+2. Intercepted the POST /login request via Burp Suite.
+3. Inserted SQLi payload in the username field: `administrator'--`
+4. Forwarded the modified request with a valid CSRF token.
+5. Received HTTP 302 redirect.
+6. Lab displayed "Congratulations, you solved the lab."
 
 ---
 
 Impact:
-- Full authentication bypass.
-- Gained unauthorized access to admin panel.
+- Full authentication bypass
+- Access granted as administrator
+- No valid credentials required
 
----
+Lab Status: ✅ Solved
 
-Status: ✅ Lab successfully exploited.
